@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liibaan Libaax — Media Brand Proposal</title>
+  <style>
+    :root {
+      --bg: #0a0b10;
+      --bg-soft: #121420;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-strong: rgba(255, 255, 255, 0.1);
+      --text: #edf0ff;
+      --muted: #b7bdd4;
+      --accent: #ffb347;
+      --accent-2: #ff8f3f;
+      --line: rgba(255, 255, 255, 0.14);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 450px at 90% -10%, rgba(255, 179, 71, 0.22), transparent 60%),
+        radial-gradient(700px 350px at 0% 10%, rgba(255, 143, 63, 0.18), transparent 60%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { width: min(var(--max), 92%); margin-inline: auto; }
+    .section { padding: 86px 0; position: relative; }
+    .section-title { font-size: clamp(1.6rem, 2.5vw, 2.3rem); margin: 0 0 14px; letter-spacing: 0.2px; }
+    .section-intro { color: var(--muted); max-width: 860px; margin: 0 0 28px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(10, 11, 16, 0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topnav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 10px; }
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .navlinks a:hover { color: var(--text); border-color: var(--line); background: rgba(255,255,255,0.04); }
+
+    .hero {
+      padding: 90px 0 70px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      color: #ffd9a3;
+      background: rgba(255, 179, 71, 0.16);
+      border: 1px solid rgba(255, 179, 71, 0.34);
+      padding: 6px 11px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+    }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 62ch; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #271300;
+      border: none;
+      box-shadow: 0 12px 26px rgba(255, 143, 63, 0.33);
+    }
+    .btn.secondary { color: var(--text); background: rgba(255,255,255,0.04); }
+    .btn:hover { transform: translateY(-2px); }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(9px);
+    }
+
+    .system-visual { padding: 22px; }
+    .system-node {
+      position: relative;
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .system-node small { display:block; color:var(--muted); font-weight:500; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+
+    .card { padding: 20px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--card); }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p, .card li { color: var(--muted); margin: 0; }
+    .card ul { margin: 10px 0 0 18px; padding: 0; }
+
+    .kpi {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+    .kpi strong { display: block; font-size: 1.4rem; color: #ffd39b; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+      align-items: center;
+    }
+    .flow-step {
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      font-weight: 600;
+      min-height: 78px;
+      display: grid;
+      place-items: center;
+      font-size: .92rem;
+    }
+    .arrow {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,179,71,0.15), rgba(255,179,71,0.9));
+      position: relative;
+      margin: 0 4px;
+    }
+    .arrow::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: -4px;
+      border-left: 8px solid var(--accent);
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #ffd39b;
+      background: rgba(255, 179, 71, 0.08);
+      margin-bottom: 8px;
+    }
+
+    .icon-row { display: flex; align-items: start; gap: 10px; }
+    .icon {
+      width: 34px;
+      aspect-ratio: 1;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 179, 71, 0.16);
+      border: 1px solid rgba(255, 179, 71, 0.35);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .highlight {
+      border-left: 3px solid var(--accent);
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: rgba(255, 179, 71, 0.08);
+      color: #ffe7c4;
+      margin-top: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+    .phase {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+    }
+    .phase .tag {
+      font-weight: 700;
+      text-align: center;
+      color: #2b1700;
+      background: linear-gradient(135deg,#ffd194,#ffad58);
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding: 80px 0 100px;
+    }
+    .footer-cta h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 10px; }
+    .footer-cta p { color: var(--muted); max-width: 720px; margin: 0 auto 20px; }
+
+    .to-top {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      border: none;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #2b1600;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(255,143,63,.35);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .25s ease;
+      pointer-events: none;
+    }
+    .to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    @media (max-width: 1080px) {
+      .flow { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
+      .arrow { display: none; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      .section { padding: 68px 0; }
+      .phase { grid-template-columns: 1fr; }
+      .phase .tag { width: fit-content; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topnav">
+    <div class="container">
+      <div class="brand">Liibaan <span>Media Proposal</span></div>
+      <nav class="navlinks" aria-label="Section navigation">
+        <a href="#summary">Summary</a>
+        <a href="#vision">Vision</a>
+        <a href="#website">Website</a>
+        <a href="#content">Content</a>
+        <a href="#business">Business Model</a>
+        <a href="#launch">Launch Plan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Client Proposal • Strategic Growth Plan</span>
+          <h1>Transform Liibaan Libaax into a Scalable Children’s Media Brand</h1>
+          <p>
+            Today, you have a strong story foundation. This proposal turns that foundation into a full growth system: brand strategy, website infrastructure, recurring content, AI-powered animation, paid acquisition, and scalable monetization.
+          </p>
+          <div class="cta-row">
+            <a href="#launch" class="btn primary">View Plan</a>
+            <a href="#vision" class="btn secondary">Understand Strategy</a>
+          </div>
+        </div>
+        <aside class="glass system-visual reveal" aria-label="Conceptual system visual">
+          <div class="system-node">Story IP <small>Liibaan Libaax world & characters</small></div>
+          <div class="system-node">Content Engine <small>Daily short-form + weekly deeper stories</small></div>
+          <div class="system-node">Conversion Website <small>Own platform, optimized funnel, tracked growth</small></div>
+          <div class="system-node">Profit Layers <small>Book, bundles, digital, partnerships, subscription</small></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="summary" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">1) Executive Summary</h2>
+        <p class="section-intro reveal">
+          Right now, Liibaan Libaax exists as a children’s book plus an Instagram presence. That is a good start, but by itself it limits scale. The opportunity is to evolve from a single product into a media-led brand where stories become recurring content, content builds audience trust, and audience converts through a dedicated website and structured offers.
+        </p>
+        <div class="grid-3">
+          <article class="card reveal"><h3>What Exists</h3><p>A meaningful story, a real identity, and early social proof from Instagram.</p></article>
+          <article class="card reveal"><h3>Current Limitation</h3><p>One product and no integrated growth engine means revenue depends on sporadic sales activity.</p></article>
+          <article class="card reveal"><h3>What We Build</h3><p>A children’s media company: brand, platform, content machine, and conversion system.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problems">
+      <div class="container">
+        <h2 class="section-title reveal">2) Problem with the Current Model</h2>
+        <div class="grid-2">
+          <div class="card reveal">
+            <div class="icon-row"><div class="icon">💸</div><div><h3>Shopify Cost Pressure</h3><p>Platform fees, app costs, and transaction layers reduce margins early.</p></div></div>
+          </div>
+          <div class="card reveal">
+            <div class="icon-row"><div class="icon">📕</div><div><h3>Single Product Limitation</h3><p>One title alone creates low repeat purchase opportunities.</p></div></div>
+          </div>
+          <div class="card reveal">
+            <div class="icon-row"><div class="icon">🎬</div><div><h3>No Content Engine</h3><p>Without planned content output, awareness stays inconsistent and expensive.</p></div></div>
+          </div>
+          <div class="card reveal">
+            <div class="icon-row"><div class="icon">📉</div><div><h3>Weak Scalability</h3><p>No systemized funnel from audience discovery to purchase to retention.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vision">
+      <div class="container">
+        <h2 class="section-title reveal">3) Big Vision: The Transformation System</h2>
+        <p class="section-intro reveal">This is the core model: we convert intellectual property into compounding commercial value.</p>
+        <div class="flow reveal" role="img" aria-label="Business flow from book to brand growth">
+          <div class="flow-step">BOOK</div><div class="arrow"></div>
+          <div class="flow-step">STORY IP</div><div class="arrow"></div>
+          <div class="flow-step">CONTENT</div><div class="arrow"></div>
+          <div class="flow-step">AUDIENCE</div><div class="arrow"></div>
+          <div class="flow-step">WEBSITE</div><div class="arrow"></div>
+          <div class="flow-step">SALES</div>
+        </div>
+        <div class="highlight reveal">Sales are reinvested into content and product expansion, leading to sustained <strong>brand growth</strong>.</div>
+      </div>
+    </section>
+
+    <section class="section" id="positioning">
+      <div class="container">
+        <h2 class="section-title reveal">4) Brand Positioning</h2>
+        <div class="grid-2">
+          <article class="card reveal">
+            <span class="pill">Positioning Statement</span>
+            <p>Liibaan Libaax is not just a book. It is a children’s storytelling brand designed to help families raise confident, values-driven kids through relatable stories.</p>
+          </article>
+          <article class="card reveal">
+            <span class="pill">Why Parents Buy</span>
+            <ul>
+              <li>Values and character development</li>
+              <li>Learning and language development</li>
+              <li>Identity and representation</li>
+              <li>Confidence-building narratives</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="naming">
+      <div class="container">
+        <h2 class="section-title reveal">5) Naming Options</h2>
+        <div class="grid-3">
+          <article class="card reveal"><h3>Liibaan Libaax</h3><p>Strong continuity, direct brand recognition from existing audience.</p></article>
+          <article class="card reveal"><h3>Liibaan Libaax Stories</h3><p>Expands from one book to a story universe while keeping equity.</p></article>
+          <article class="card reveal"><h3>Liibaan Libaax Kids</h3><p>Child-focused and friendly for product line extension.</p></article>
+          <article class="card reveal"><h3>Little Lion Stories</h3><p>Highly accessible for broad English-speaking markets.</p></article>
+          <article class="card reveal"><h3>Leo Lion Stories</h3><p>Simple and global, but less culturally specific identity.</p></article>
+          <article class="card reveal"><h3>Safari Story House</h3><p>Media-house tone, best for multi-character publishing model.</p></article>
+        </div>
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="card reveal"><h3>Best Continuity Option</h3><p><strong>Liibaan Libaax Stories</strong> — strongest bridge from current assets to scaled content.</p></div>
+          <div class="card reveal"><h3>Best Global Option</h3><p><strong>Little Lion Stories</strong> — easiest for international memorability and ad performance.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="website">
+      <div class="container">
+        <h2 class="section-title reveal">6) Website Strategy</h2>
+        <div class="grid-4">
+          <div class="card reveal"><h3>Independent Platform</h3><p>Own website stack with lower dependency and higher control than Shopify.</p></div>
+          <div class="card reveal"><h3>Homepage Flow</h3><p>Clear hero, story proof, offers, testimonials, FAQ, and primary conversion CTA.</p></div>
+          <div class="card reveal"><h3>Offer Architecture</h3><p>Dedicated product pages and ad-specific landing pages for campaign intent.</p></div>
+          <div class="card reveal"><h3>Measurement</h3><p>Analytics, event tracking, and conversion dashboards for optimization decisions.</p></div>
+        </div>
+        <div class="highlight reveal">Trust blocks (reviews, delivery info, secure checkout, refund clarity) directly support conversion rate and customer confidence.</div>
+      </div>
+    </section>
+
+    <section class="section" id="content">
+      <div class="container">
+        <h2 class="section-title reveal">7) Content Strategy (Daily + Weekly Engine)</h2>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Daily Execution</h3>
+            <ul>
+              <li>Short videos with strong first-2-second hooks</li>
+              <li>Story snippets and character moments</li>
+              <li>Simple, repeatable social formats</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Weekly Anchors</h3>
+            <ul>
+              <li>Higher-production storytelling videos</li>
+              <li>Read-aloud clips and mini episodes</li>
+              <li>Educational + emotional narrative content</li>
+            </ul>
+          </article>
+        </div>
+        <div class="grid-3" style="margin-top:16px;">
+          <div class="card reveal"><h3>Content Types</h3><p>Story scenes, life lessons, funny clips, read-aloud, episodic arcs.</p></div>
+          <div class="card reveal"><h3>Distribution</h3><p>Instagram, TikTok, YouTube Shorts as top-of-funnel discovery channels.</p></div>
+          <div class="card reveal"><h3>Objective</h3><p>Build low-cost attention consistently, then route warm audience to website offers.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="animation">
+      <div class="container">
+        <h2 class="section-title reveal">8) AI Animation Strategy</h2>
+        <div class="grid-3">
+          <article class="card reveal"><h3>Workflow</h3><p>Story scene → short script → character setup → visual generation → light animation → voice + subtitles.</p></article>
+          <article class="card reveal"><h3>Why It Works</h3><p>Faster output, lower production cost, and higher creative testing velocity.</p></article>
+          <article class="card reveal"><h3>Business Impact</h3><p>Scalable content volume supports both organic reach and paid ads performance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="business">
+      <div class="container">
+        <h2 class="section-title reveal">9) Business Model (Revenue Layers)</h2>
+        <div class="grid-3">
+          <div class="card reveal"><h3>Core Sales</h3><p>Single book, family bundles (primary profit engine), premium gift bundles.</p></div>
+          <div class="card reveal"><h3>Digital Upsells</h3><p>Printable activities, audio stories, bedtime packs, digital lesson kits.</p></div>
+          <div class="card reveal"><h3>Expansion Revenue</h3><p>Future Story Club subscription and school/community partnerships.</p></div>
+        </div>
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="kpi reveal"><strong>AOV Growth</strong>Increasing average order value through bundles is key to ad profitability.</div>
+          <div class="kpi reveal"><strong>Margin Discipline</strong>Offer design + funnel structure determine long-term sustainable scaling.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="market">
+      <div class="container">
+        <h2 class="section-title reveal">10) Market Strategy</h2>
+        <div class="grid-4">
+          <div class="card reveal"><h3>Finland</h3><p>Operational base: execution, testing, and fulfillment foundation.</p></div>
+          <div class="card reveal"><h3>Kenya</h3><p>Identity, culture, story depth, and partnership/community relevance.</p></div>
+          <div class="card reveal"><h3>Europe</h3><p>Primary broad audience for growth and recurring family purchases.</p></div>
+          <div class="card reveal"><h3>USA / UK</h3><p>High-value buyers for premium bundles and digital expansion offers.</p></div>
+        </div>
+        <div class="highlight reveal">Kenya remains central in brand identity; scaling economics are driven by global market demand.</div>
+      </div>
+    </section>
+
+    <section class="section" id="ads">
+      <div class="container">
+        <h2 class="section-title reveal">11) Ads Strategy</h2>
+        <div class="grid-4">
+          <div class="card reveal"><h3>1. Cold Content</h3><p>Use engaging short videos to attract new audiences.</p></div>
+          <div class="card reveal"><h3>2. Retargeting</h3><p>Re-engage viewers and profile visitors with deeper trust content.</p></div>
+          <div class="card reveal"><h3>3. Conversion</h3><p>Drive warm audiences into focused landing pages with clear offers.</p></div>
+          <div class="card reveal"><h3>4. Scale</h3><p>Increase spend on winning creatives and profitable audience pockets.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container">
+        <h2 class="section-title reveal">12) Why This Will Work</h2>
+        <div class="grid-2">
+          <article class="card reveal"><h3>Content Lowers CAC</h3><p>Ongoing content warms traffic, reducing cold ad dependency and cost per conversion.</p></article>
+          <article class="card reveal"><h3>Story Reusability</h3><p>Each story scene can be repurposed across formats, channels, and campaign goals.</p></article>
+          <article class="card reveal"><h3>Brand Expansion</h3><p>One story world supports future books, audio, merchandise, and partnerships.</p></article>
+          <article class="card reveal"><h3>System Scalability</h3><p>The model is not campaign-dependent; it is process-driven and repeatable.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="launch">
+      <div class="container">
+        <h2 class="section-title reveal">13) Launch Plan (Phased Execution)</h2>
+        <div class="timeline">
+          <div class="phase reveal"><div class="tag">Phase 1</div><div><strong>Brand + Structure</strong><br/>Positioning, naming direction, offer map, and content pillars.</div></div>
+          <div class="phase reveal"><div class="tag">Phase 2</div><div><strong>Website Build</strong><br/>Conversion-first website, product architecture, and tracking setup.</div></div>
+          <div class="phase reveal"><div class="tag">Phase 3</div><div><strong>Content Engine</strong><br/>Daily and weekly production cadence with AI-assisted animation workflow.</div></div>
+          <div class="phase reveal"><div class="tag">Phase 4</div><div><strong>Ads Testing</strong><br/>Creative testing, audience split tests, and landing page validation.</div></div>
+          <div class="phase reveal"><div class="tag">Phase 5</div><div><strong>Scaling</strong><br/>Budget increases behind profitable segments and winning bundles.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="monthly">
+      <div class="container">
+        <h2 class="section-title reveal">14) Month-to-Month Plan</h2>
+        <div class="grid-4">
+          <div class="card reveal"><h3>Month 1</h3><p>Setup + website foundation + content production starts.</p></div>
+          <div class="card reveal"><h3>Month 2</h3><p>Offer and creative testing across platforms and audiences.</p></div>
+          <div class="card reveal"><h3>Month 3</h3><p>Optimize funnels, improve conversion rate, refine unit economics.</p></div>
+          <div class="card reveal"><h3>Month 4+</h3><p>Scale winning campaigns and grow catalog + retention loops.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="agency">
+      <div class="container">
+        <h2 class="section-title reveal">15) Agency Role — What We Execute</h2>
+        <div class="grid-3">
+          <div class="card reveal"><h3>Brand Strategy</h3><p>Positioning clarity, narrative architecture, and market alignment.</p></div>
+          <div class="card reveal"><h3>Website & Funnel</h3><p>Independent website, conversion-focused UX, landing pages, checkout logic.</p></div>
+          <div class="card reveal"><h3>Content System</h3><p>Editorial cadence, platform-native formats, performance feedback loop.</p></div>
+          <div class="card reveal"><h3>Animation Workflow</h3><p>AI-assisted pipeline for repeatable short-form story production.</p></div>
+          <div class="card reveal"><h3>Ads Strategy</h3><p>Acquisition funnel design, testing plan, creative iteration framework.</p></div>
+          <div class="card reveal"><h3>Tracking & Optimization</h3><p>Analytics instrumentation, KPI reviews, and month-by-month scaling decisions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta" id="final">
+      <div class="container reveal">
+        <h2>This is Not Just Selling a Book.<br/>This is Building a Children’s Media Brand.</h2>
+        <p>With the right system—brand, content, website, and growth strategy—Liibaan Libaax can scale from a single title into a sustainable, multi-channel media business.</p>
+        <a class="btn primary" href="#summary">Review Proposal Again</a>
+      </div>
+    </section>
+  </main>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.13 });
+    reveals.forEach(el => observer.observe(el));
+
+    const topBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) topBtn.classList.add('show');
+      else topBtn.classList.remove('show');
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
