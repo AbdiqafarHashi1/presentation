@@ -164,7 +164,7 @@
 
     .flow {
       display: grid;
-      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      grid-template-columns: repeat(5, minmax(120px, 1fr));
       gap: 10px;
       margin-top: 24px;
       align-items: center;
@@ -181,21 +181,6 @@
       place-items: center;
       font-size: .92rem;
     }
-    .arrow {
-      height: 2px;
-      background: linear-gradient(90deg, rgba(255,179,71,0.15), rgba(255,179,71,0.9));
-      position: relative;
-      margin: 0 4px;
-    }
-    .arrow::after {
-      content: '';
-      position: absolute;
-      right: -1px;
-      top: -4px;
-      border-left: 8px solid var(--accent);
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-    }
 
     .pill {
       display: inline-block;
@@ -206,19 +191,6 @@
       color: #ffd39b;
       background: rgba(255, 179, 71, 0.08);
       margin-bottom: 8px;
-    }
-
-    .icon-row { display: flex; align-items: start; gap: 10px; }
-    .icon {
-      width: 34px;
-      aspect-ratio: 1;
-      border-radius: 9px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 179, 71, 0.16);
-      border: 1px solid rgba(255, 179, 71, 0.35);
-      flex-shrink: 0;
-      margin-top: 2px;
     }
 
     .highlight {
@@ -282,7 +254,6 @@
 
     @media (max-width: 1080px) {
       .flow { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
-      .arrow { display: none; }
     }
 
     @media (max-width: 860px) {
@@ -300,11 +271,11 @@
       <div class="brand">Liibaan <span>Media Proposal</span></div>
       <nav class="navlinks" aria-label="Section navigation">
         <a href="#summary">Summary</a>
-        <a href="#vision">Vision</a>
+        <a href="#opportunity">Opportunity</a>
         <a href="#website">Website</a>
-        <a href="#content">Content</a>
-        <a href="#business">Business Model</a>
-        <a href="#launch">Launch Plan</a>
+        <a href="#content">Content + AI</a>
+        <a href="#revenue">Revenue</a>
+        <a href="#launch">Launch</a>
       </nav>
     </div>
   </header>
@@ -314,20 +285,21 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="eyebrow">Client Proposal • Strategic Growth Plan</span>
-          <h1>Transform Liibaan Libaax into a Scalable Children’s Media Brand</h1>
+          <h1>Build Liibaan Libaax into a Scalable Children’s Media Brand</h1>
           <p>
-            Today, you have a strong story foundation. This proposal turns that foundation into a full growth system: brand strategy, website infrastructure, recurring content, AI-powered animation, paid acquisition, and scalable monetization.
+            This plan turns one strong book into a repeatable growth system: clear brand positioning, a conversion-focused website,
+            AI-assisted content production, and disciplined market expansion.
           </p>
           <div class="cta-row">
-            <a href="#launch" class="btn primary">View Plan</a>
-            <a href="#vision" class="btn secondary">Understand Strategy</a>
+            <a href="#launch" class="btn primary">View Launch Plan</a>
+            <a href="#summary" class="btn secondary">Read Executive Summary</a>
           </div>
         </div>
         <aside class="glass system-visual reveal" aria-label="Conceptual system visual">
-          <div class="system-node">Story IP <small>Liibaan Libaax world & characters</small></div>
-          <div class="system-node">Content Engine <small>Daily short-form + weekly deeper stories</small></div>
-          <div class="system-node">Conversion Website <small>Own platform, optimized funnel, tracked growth</small></div>
-          <div class="system-node">Profit Layers <small>Book, bundles, digital, partnerships, subscription</small></div>
+          <div class="system-node">Story IP <small>Liibaan Libaax world and characters</small></div>
+          <div class="system-node">Content Engine <small>Consistent short-form and episodic storytelling</small></div>
+          <div class="system-node">Conversion Website <small>Owned platform with offers, trust, and tracking</small></div>
+          <div class="system-node">Revenue Layers <small>Products, digital add-ons, partnerships, future creator upside</small></div>
         </aside>
       </div>
     </section>
@@ -336,239 +308,156 @@
       <div class="container">
         <h2 class="section-title reveal">1) Executive Summary</h2>
         <p class="section-intro reveal">
-          Right now, Liibaan Libaax exists as a children’s book plus an Instagram presence. That is a good start, but by itself it limits scale. The opportunity is to evolve from a single product into a media-led brand where stories become recurring content, content builds audience trust, and audience converts through a dedicated website and structured offers.
+          Liibaan Libaax has meaningful brand potential but currently operates like a single-product business. Our objective is to
+          evolve it into a media brand where content drives audience growth, the website converts trust into sales, and revenue is
+          reinvested into controlled scaling.
         </p>
         <div class="grid-3">
-          <article class="card reveal"><h3>What Exists</h3><p>A meaningful story, a real identity, and early social proof from Instagram.</p></article>
-          <article class="card reveal"><h3>Current Limitation</h3><p>One product and no integrated growth engine means revenue depends on sporadic sales activity.</p></article>
-          <article class="card reveal"><h3>What We Build</h3><p>A children’s media company: brand, platform, content machine, and conversion system.</p></article>
+          <article class="card reveal"><h3>Where You Are</h3><p>Strong book IP and early social traction.</p></article>
+          <article class="card reveal"><h3>Key Gap</h3><p>No integrated engine connecting content, conversion, and retention.</p></article>
+          <article class="card reveal"><h3>What We Build</h3><p>A lean, premium media-commerce system designed for repeatable growth.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="problems">
+    <section class="section" id="opportunity">
       <div class="container">
-        <h2 class="section-title reveal">2) Problem with the Current Model</h2>
-        <div class="grid-2">
-          <div class="card reveal">
-            <div class="icon-row"><div class="icon">💸</div><div><h3>Shopify Cost Pressure</h3><p>Platform fees, app costs, and transaction layers reduce margins early.</p></div></div>
-          </div>
-          <div class="card reveal">
-            <div class="icon-row"><div class="icon">📕</div><div><h3>Single Product Limitation</h3><p>One title alone creates low repeat purchase opportunities.</p></div></div>
-          </div>
-          <div class="card reveal">
-            <div class="icon-row"><div class="icon">🎬</div><div><h3>No Content Engine</h3><p>Without planned content output, awareness stays inconsistent and expensive.</p></div></div>
-          </div>
-          <div class="card reveal">
-            <div class="icon-row"><div class="icon">📉</div><div><h3>Weak Scalability</h3><p>No systemized funnel from audience discovery to purchase to retention.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="vision">
-      <div class="container">
-        <h2 class="section-title reveal">3) Big Vision: The Transformation System</h2>
-        <p class="section-intro reveal">This is the core model: we convert intellectual property into compounding commercial value.</p>
+        <h2 class="section-title reveal">2) The Opportunity / From Book to Media Brand</h2>
+        <p class="section-intro reveal">The opportunity is not only to sell a book, but to compound the value of your story IP.</p>
         <div class="flow reveal" role="img" aria-label="Business flow from book to brand growth">
-          <div class="flow-step">BOOK</div><div class="arrow"></div>
-          <div class="flow-step">STORY IP</div><div class="arrow"></div>
-          <div class="flow-step">CONTENT</div><div class="arrow"></div>
-          <div class="flow-step">AUDIENCE</div><div class="arrow"></div>
-          <div class="flow-step">WEBSITE</div><div class="arrow"></div>
-          <div class="flow-step">SALES</div>
+          <div class="flow-step">BOOK</div>
+          <div class="flow-step">CONTENT</div>
+          <div class="flow-step">AUDIENCE</div>
+          <div class="flow-step">WEBSITE</div>
+          <div class="flow-step">REVENUE</div>
         </div>
-        <div class="highlight reveal">Sales are reinvested into content and product expansion, leading to sustained <strong>brand growth</strong>.</div>
+        <div class="highlight reveal">Each cycle improves distribution, trust, and profitability—creating long-term brand equity, not one-off campaigns.</div>
       </div>
     </section>
 
-    <section class="section" id="positioning">
+    <section class="section" id="brand">
       <div class="container">
-        <h2 class="section-title reveal">4) Brand Positioning</h2>
+        <h2 class="section-title reveal">3) Brand + Naming</h2>
         <div class="grid-2">
           <article class="card reveal">
-            <span class="pill">Positioning Statement</span>
-            <p>Liibaan Libaax is not just a book. It is a children’s storytelling brand designed to help families raise confident, values-driven kids through relatable stories.</p>
+            <span class="pill">Positioning</span>
+            <p>Liibaan Libaax is a values-driven children’s storytelling brand helping families raise confident, grounded kids.</p>
           </article>
           <article class="card reveal">
-            <span class="pill">Why Parents Buy</span>
-            <ul>
-              <li>Values and character development</li>
-              <li>Learning and language development</li>
-              <li>Identity and representation</li>
-              <li>Confidence-building narratives</li>
-            </ul>
+            <span class="pill">Naming Direction</span>
+            <p><strong>Primary recommendation:</strong> <em>Liibaan Libaax Stories</em> for continuity and scale. <strong>Global alternative:</strong> <em>Little Lion Stories</em>.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="naming">
-      <div class="container">
-        <h2 class="section-title reveal">5) Naming Options</h2>
-        <div class="grid-3">
-          <article class="card reveal"><h3>Liibaan Libaax</h3><p>Strong continuity, direct brand recognition from existing audience.</p></article>
-          <article class="card reveal"><h3>Liibaan Libaax Stories</h3><p>Expands from one book to a story universe while keeping equity.</p></article>
-          <article class="card reveal"><h3>Liibaan Libaax Kids</h3><p>Child-focused and friendly for product line extension.</p></article>
-          <article class="card reveal"><h3>Little Lion Stories</h3><p>Highly accessible for broad English-speaking markets.</p></article>
-          <article class="card reveal"><h3>Leo Lion Stories</h3><p>Simple and global, but less culturally specific identity.</p></article>
-          <article class="card reveal"><h3>Safari Story House</h3><p>Media-house tone, best for multi-character publishing model.</p></article>
-        </div>
-        <div class="grid-2" style="margin-top:16px;">
-          <div class="card reveal"><h3>Best Continuity Option</h3><p><strong>Liibaan Libaax Stories</strong> — strongest bridge from current assets to scaled content.</p></div>
-          <div class="card reveal"><h3>Best Global Option</h3><p><strong>Little Lion Stories</strong> — easiest for international memorability and ad performance.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="website">
       <div class="container">
-        <h2 class="section-title reveal">6) Website Strategy</h2>
-        <div class="grid-4">
-          <div class="card reveal"><h3>Independent Platform</h3><p>Own website stack with lower dependency and higher control than Shopify.</p></div>
-          <div class="card reveal"><h3>Homepage Flow</h3><p>Clear hero, story proof, offers, testimonials, FAQ, and primary conversion CTA.</p></div>
-          <div class="card reveal"><h3>Offer Architecture</h3><p>Dedicated product pages and ad-specific landing pages for campaign intent.</p></div>
-          <div class="card reveal"><h3>Measurement</h3><p>Analytics, event tracking, and conversion dashboards for optimization decisions.</p></div>
+        <h2 class="section-title reveal">4) Website + Conversion System</h2>
+        <div class="grid-3">
+          <div class="card reveal"><h3>Owned Platform</h3><p>Independent website setup with clear offers, trust signals, and conversion-first structure.</p></div>
+          <div class="card reveal"><h3>Offer Architecture</h3><p>Core book, bundles, and digital upsells mapped to dedicated landing experiences.</p></div>
+          <div class="card reveal"><h3>Measurement</h3><p>Event tracking and KPI dashboards to optimize CAC, AOV, and conversion rate.</p></div>
         </div>
-        <div class="highlight reveal">Trust blocks (reviews, delivery info, secure checkout, refund clarity) directly support conversion rate and customer confidence.</div>
+        <div class="grid-3" style="margin-top:16px;">
+          <div class="card reveal"><h3>Funnel Step 1</h3><p>Cold short-form content attracts new parents.</p></div>
+          <div class="card reveal"><h3>Funnel Step 2</h3><p>Retarget warm viewers with trust content and proof.</p></div>
+          <div class="card reveal"><h3>Funnel Step 3</h3><p>Send ready buyers to focused offer pages and checkout.</p></div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="content">
       <div class="container">
-        <h2 class="section-title reveal">7) Content Strategy (Daily + Weekly Engine)</h2>
+        <h2 class="section-title reveal">5) Content + AI Animation Engine</h2>
         <div class="grid-2">
           <article class="card reveal">
-            <h3>Daily Execution</h3>
+            <h3>Production Model</h3>
             <ul>
-              <li>Short videos with strong first-2-second hooks</li>
-              <li>Story snippets and character moments</li>
-              <li>Simple, repeatable social formats</li>
+              <li>Daily short-form hooks and character moments</li>
+              <li>Weekly anchor stories and read-aloud episodes</li>
+              <li>Platform-native distribution across Instagram, TikTok, and YouTube</li>
             </ul>
           </article>
           <article class="card reveal">
-            <h3>Weekly Anchors</h3>
+            <h3>AI-Assisted Workflow</h3>
             <ul>
-              <li>Higher-production storytelling videos</li>
-              <li>Read-aloud clips and mini episodes</li>
-              <li>Educational + emotional narrative content</li>
+              <li>Story scene → script → visual generation → light animation → voice/subtitles</li>
+              <li>Higher output at lower cost with faster creative testing</li>
+              <li>Reusable assets that support both organic growth and paid campaigns</li>
             </ul>
           </article>
         </div>
-        <div class="grid-3" style="margin-top:16px;">
-          <div class="card reveal"><h3>Content Types</h3><p>Story scenes, life lessons, funny clips, read-aloud, episodic arcs.</p></div>
-          <div class="card reveal"><h3>Distribution</h3><p>Instagram, TikTok, YouTube Shorts as top-of-funnel discovery channels.</p></div>
-          <div class="card reveal"><h3>Objective</h3><p>Build low-cost attention consistently, then route warm audience to website offers.</p></div>
-        </div>
       </div>
     </section>
 
-    <section class="section" id="animation">
+    <section class="section" id="revenue">
       <div class="container">
-        <h2 class="section-title reveal">8) AI Animation Strategy</h2>
+        <h2 class="section-title reveal">6) Revenue Model</h2>
         <div class="grid-3">
-          <article class="card reveal"><h3>Workflow</h3><p>Story scene → short script → character setup → visual generation → light animation → voice + subtitles.</p></article>
-          <article class="card reveal"><h3>Why It Works</h3><p>Faster output, lower production cost, and higher creative testing velocity.</p></article>
-          <article class="card reveal"><h3>Business Impact</h3><p>Scalable content volume supports both organic reach and paid ads performance.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="business">
-      <div class="container">
-        <h2 class="section-title reveal">9) Business Model (Revenue Layers)</h2>
-        <div class="grid-3">
-          <div class="card reveal"><h3>Core Sales</h3><p>Single book, family bundles (primary profit engine), premium gift bundles.</p></div>
-          <div class="card reveal"><h3>Digital Upsells</h3><p>Printable activities, audio stories, bedtime packs, digital lesson kits.</p></div>
-          <div class="card reveal"><h3>Expansion Revenue</h3><p>Future Story Club subscription and school/community partnerships.</p></div>
+          <div class="card reveal"><h3>Core Commerce</h3><p>Book sales, family bundles, and premium gift offers as the primary revenue base.</p></div>
+          <div class="card reveal"><h3>Digital Upside</h3><p>Printable packs, audio stories, and learning resources to increase order value and retention.</p></div>
+          <div class="card reveal"><h3>Expansion Layers</h3><p>Future subscription formats, school/community partnerships, and selective licensing paths.</p></div>
         </div>
         <div class="grid-2" style="margin-top:16px;">
-          <div class="kpi reveal"><strong>AOV Growth</strong>Increasing average order value through bundles is key to ad profitability.</div>
-          <div class="kpi reveal"><strong>Margin Discipline</strong>Offer design + funnel structure determine long-term sustainable scaling.</div>
+          <div class="kpi reveal"><strong>Why This Works</strong>Story-led content lowers customer acquisition cost over time and improves paid media efficiency.</div>
+          <div class="kpi reveal"><strong>Scalable Economics</strong>Bundle strategy and conversion discipline support healthier margins as volume grows.</div>
+        </div>
+        <div class="card reveal" style="margin-top:16px;">
+          <h3>Future Media Revenue</h3>
+          <p>
+            As the content ecosystem matures, the brand may become eligible for TikTok and YouTube monetization or creator revenue programs.
+            This is future upside—not a guaranteed outcome—but it can add a new revenue layer where content itself contributes income.
+            Over time, that income can be reinvested into SEO, Meta ads, growth campaigns, and additional content production so the engine
+            helps fund part of its own expansion instead of relying only on paid ads.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section" id="market">
       <div class="container">
-        <h2 class="section-title reveal">10) Market Strategy</h2>
+        <h2 class="section-title reveal">7) Market Strategy</h2>
         <div class="grid-4">
-          <div class="card reveal"><h3>Finland</h3><p>Operational base: execution, testing, and fulfillment foundation.</p></div>
-          <div class="card reveal"><h3>Kenya</h3><p>Identity, culture, story depth, and partnership/community relevance.</p></div>
-          <div class="card reveal"><h3>Europe</h3><p>Primary broad audience for growth and recurring family purchases.</p></div>
-          <div class="card reveal"><h3>USA / UK</h3><p>High-value buyers for premium bundles and digital expansion offers.</p></div>
-        </div>
-        <div class="highlight reveal">Kenya remains central in brand identity; scaling economics are driven by global market demand.</div>
-      </div>
-    </section>
-
-    <section class="section" id="ads">
-      <div class="container">
-        <h2 class="section-title reveal">11) Ads Strategy</h2>
-        <div class="grid-4">
-          <div class="card reveal"><h3>1. Cold Content</h3><p>Use engaging short videos to attract new audiences.</p></div>
-          <div class="card reveal"><h3>2. Retargeting</h3><p>Re-engage viewers and profile visitors with deeper trust content.</p></div>
-          <div class="card reveal"><h3>3. Conversion</h3><p>Drive warm audiences into focused landing pages with clear offers.</p></div>
-          <div class="card reveal"><h3>4. Scale</h3><p>Increase spend on winning creatives and profitable audience pockets.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proof">
-      <div class="container">
-        <h2 class="section-title reveal">12) Why This Will Work</h2>
-        <div class="grid-2">
-          <article class="card reveal"><h3>Content Lowers CAC</h3><p>Ongoing content warms traffic, reducing cold ad dependency and cost per conversion.</p></article>
-          <article class="card reveal"><h3>Story Reusability</h3><p>Each story scene can be repurposed across formats, channels, and campaign goals.</p></article>
-          <article class="card reveal"><h3>Brand Expansion</h3><p>One story world supports future books, audio, merchandise, and partnerships.</p></article>
-          <article class="card reveal"><h3>System Scalability</h3><p>The model is not campaign-dependent; it is process-driven and repeatable.</p></article>
+          <div class="card reveal"><h3>Finland</h3><p>Operational base for execution and fulfillment quality.</p></div>
+          <div class="card reveal"><h3>Kenya</h3><p>Core identity anchor and long-term partnership ecosystem.</p></div>
+          <div class="card reveal"><h3>Europe</h3><p>Primary growth market for recurring family purchases.</p></div>
+          <div class="card reveal"><h3>USA / UK</h3><p>High-value expansion markets for premium bundles and digital offers.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="launch">
       <div class="container">
-        <h2 class="section-title reveal">13) Launch Plan (Phased Execution)</h2>
+        <h2 class="section-title reveal">8) Launch Plan</h2>
         <div class="timeline">
-          <div class="phase reveal"><div class="tag">Phase 1</div><div><strong>Brand + Structure</strong><br/>Positioning, naming direction, offer map, and content pillars.</div></div>
-          <div class="phase reveal"><div class="tag">Phase 2</div><div><strong>Website Build</strong><br/>Conversion-first website, product architecture, and tracking setup.</div></div>
-          <div class="phase reveal"><div class="tag">Phase 3</div><div><strong>Content Engine</strong><br/>Daily and weekly production cadence with AI-assisted animation workflow.</div></div>
-          <div class="phase reveal"><div class="tag">Phase 4</div><div><strong>Ads Testing</strong><br/>Creative testing, audience split tests, and landing page validation.</div></div>
-          <div class="phase reveal"><div class="tag">Phase 5</div><div><strong>Scaling</strong><br/>Budget increases behind profitable segments and winning bundles.</div></div>
+          <div class="phase reveal"><div class="tag">Month 1</div><div><strong>Brand + Foundation</strong><br/>Finalize positioning, naming, offer architecture, and content pillars.</div></div>
+          <div class="phase reveal"><div class="tag">Month 2</div><div><strong>Website + Tracking</strong><br/>Launch conversion-ready site, landing pages, analytics, and baseline automation.</div></div>
+          <div class="phase reveal"><div class="tag">Month 3</div><div><strong>Content + Testing</strong><br/>Run daily/weekly publishing cadence with structured creative and audience tests.</div></div>
+          <div class="phase reveal"><div class="tag">Month 4+</div><div><strong>Optimization + Scale</strong><br/>Increase spend and production behind proven creatives, offers, and audiences.</div></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="monthly">
+    <section class="section" id="handle">
       <div class="container">
-        <h2 class="section-title reveal">14) Month-to-Month Plan</h2>
-        <div class="grid-4">
-          <div class="card reveal"><h3>Month 1</h3><p>Setup + website foundation + content production starts.</p></div>
-          <div class="card reveal"><h3>Month 2</h3><p>Offer and creative testing across platforms and audiences.</p></div>
-          <div class="card reveal"><h3>Month 3</h3><p>Optimize funnels, improve conversion rate, refine unit economics.</p></div>
-          <div class="card reveal"><h3>Month 4+</h3><p>Scale winning campaigns and grow catalog + retention loops.</p></div>
+        <h2 class="section-title reveal">9) What We Handle</h2>
+        <div class="grid-2">
+          <div class="card reveal"><h3>Brand Strategy</h3><p>Positioning clarity, naming direction, and offer logic.</p></div>
+          <div class="card reveal"><h3>Website + Funnel</h3><p>Conversion UX, landing pages, checkout flow, and tracking setup.</p></div>
+          <div class="card reveal"><h3>Content + AI Production</h3><p>Editorial cadence, creative systems, and AI-assisted animation workflow.</p></div>
+          <div class="card reveal"><h3>Growth Optimization</h3><p>Paid media testing, KPI reviews, and scale decisions based on performance.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="agency">
-      <div class="container">
-        <h2 class="section-title reveal">15) Agency Role — What We Execute</h2>
-        <div class="grid-3">
-          <div class="card reveal"><h3>Brand Strategy</h3><p>Positioning clarity, narrative architecture, and market alignment.</p></div>
-          <div class="card reveal"><h3>Website & Funnel</h3><p>Independent website, conversion-focused UX, landing pages, checkout logic.</p></div>
-          <div class="card reveal"><h3>Content System</h3><p>Editorial cadence, platform-native formats, performance feedback loop.</p></div>
-          <div class="card reveal"><h3>Animation Workflow</h3><p>AI-assisted pipeline for repeatable short-form story production.</p></div>
-          <div class="card reveal"><h3>Ads Strategy</h3><p>Acquisition funnel design, testing plan, creative iteration framework.</p></div>
-          <div class="card reveal"><h3>Tracking & Optimization</h3><p>Analytics instrumentation, KPI reviews, and month-by-month scaling decisions.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="footer-cta" id="final">
+    <section class="footer-cta" id="closing">
       <div class="container reveal">
-        <h2>This is Not Just Selling a Book.<br/>This is Building a Children’s Media Brand.</h2>
-        <p>With the right system—brand, content, website, and growth strategy—Liibaan Libaax can scale from a single title into a sustainable, multi-channel media business.</p>
+        <h2>From One Book to a Durable Media Business.</h2>
+        <p>
+          This proposal focuses on clarity, execution, and scalable economics. With a disciplined system, Liibaan Libaax can grow into a
+          trusted children’s media brand with multiple revenue paths and long-term upside.
+        </p>
         <a class="btn primary" href="#summary">Review Proposal Again</a>
       </div>
     </section>
